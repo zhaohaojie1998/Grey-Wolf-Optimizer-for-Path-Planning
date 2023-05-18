@@ -3,13 +3,13 @@ function IMG_Plot(solution, UAV)
 close all; 
 
 % 解
-Tracks = solution.Tracks;                    % 航迹们
+Tracks = solution.Tracks;                 % 航迹们
 Data = solution.Alpha_Data;               % 最优航迹信息
 Fitness_list = solution.Fitness_list;     % 适应度曲线
-Alpha_no = solution.Alpha_no;          % α解序号
+Alpha_no = solution.Alpha_no;             % α解序号
 Beta_no = solution.Beta_no;               % β解序号
 Delta_no = solution.Delta_no;             % γ解序号
-agent_no = Alpha_no;                          % 要绘制的解的序号
+agent_no = Alpha_no;                      % 要绘制的解的序号
 
 
 % 航迹图

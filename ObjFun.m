@@ -6,13 +6,13 @@ weight = [ 0.05, 0.05, 0.1, 0.7, 0.7 ]; % 默认权重
 
 
 % 表达式系数调整（将各项指标无量纲化）
-p1 = 1;   % 燃料项（已除以最大航程）
-p21 = 1; % 高度项
-p22 = 1; % 低度项
+p1 = 1;    % 燃料项（已除以最大航程）
+p21 = 1;   % 高度项
+p22 = 1;   % 低度项
 p31 = 1.2; % 雷达威胁
 p32 = 1.1; % 其余威胁
-p4 = 1.2;   % 时间同步项
-p5 = 1;   % 碰撞项
+p4 = 1.2;  % 时间同步项
+p5 = 1;    % 碰撞项
 
 
 % 进行航迹检测
@@ -48,7 +48,7 @@ end
 
 % 威胁（论文2）
 % 注意：只适应球或圆区域，不适合圆柱区域
-O_r = UAV.Menace.radar(: ,1:end-1);             %雷达            
+O_r = UAV.Menace.radar(: ,1:end-1);            %雷达            
 O_o = UAV.Menace.other(: ,1:end-1);            %导弹，火炮，气象等    
 f_t = 0;  % 威胁代价
 for i = 1 : UAV.num
@@ -93,14 +93,14 @@ subF = [ f_o; f_h; f_t; f_m; f_c ]; % 5*1
 F = weight * subF ;
 
 % 输出信息
-Data.ProbPoint = report.ProbPoint;      % 所有有问题的点
+Data.ProbPoint = report.ProbPoint;    % 所有有问题的点
 Data.AngleProb = report.AngleProb;    % 不满足角度约束的点
-Data.TrajProb = report.TrajProb;           % 不满足最小航迹间隔的点
-Data.Threat = report.Threat;                  % 受威胁的点
+Data.TrajProb = report.TrajProb;      % 不满足最小航迹间隔的点
+Data.Threat = report.Threat;          % 受威胁的点
 
-Data.L = report.L;                                      % 每个无人机的航程
-Data.t = report.time;                                 % 每个无人机的时间
-Data.c = report.col_times;                         % 所有无人机总碰撞次数
+Data.L = report.L;                    % 每个无人机的航程
+Data.t = report.time;                 % 每个无人机的时间
+Data.c = report.col_times;            % 所有无人机总碰撞次数
 
 
 end

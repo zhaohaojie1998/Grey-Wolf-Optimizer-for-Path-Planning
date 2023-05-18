@@ -8,7 +8,7 @@ options = 2;
 
 %--- 算法参数设置          
 SearchAgents = 60;           % 搜索智能体个数/狼群数量/可行解的个数 （>= 20）
-Max_iter = 145 ;                  % 最大搜索步数     
+Max_iter = 145 ;             % 最大搜索步数     
 
 
 %--- 协同无人机设置
@@ -26,7 +26,7 @@ end
 
 
 %--- 绘图
-IMG_AutoPlot(solution, UAV) % 自适应绘图（全自动绘图，但不如手动的好看）
+IMG_AutoPlot1(solution, UAV) % 自适应绘图（全自动绘图，但不如手动的好看）
 % IMG_Plot(solution, UAV) % 手动绘图（需手动添加无人机，默认3个）
 
 

@@ -4,20 +4,20 @@ function [report] = TrackDetect(Track, UAV)
 %% 无人机航迹检测
 
 % 威胁检测
-dim = UAV.PointDim;                                         % 仿真环境维度
+dim = UAV.PointDim;                       % 仿真环境维度
 M = [UAV.Menace.radar; UAV.Menace.other]; % 威胁区
 
-Threat = cell(UAV.num, 1);                                 % 威胁结果树
-Angle = cell(UAV.num, 1);                                  % 转角检测结果树
-MiniTraj = cell(UAV.num, 1);                              % 最小航迹片段检测结果树
-ProbPoint = cell(UAV.num, 1);                           % 问题点  
+Threat = cell(UAV.num, 1);                % 威胁结果树
+Angle = cell(UAV.num, 1);                 % 转角检测结果树
+MiniTraj = cell(UAV.num, 1);              % 最小航迹片段检测结果树
+ProbPoint = cell(UAV.num, 1);             % 问题点  
 
-L = cell(UAV.num, 1);                                          % 航迹片段树（累加结构）
-Time = cell(UAV.num, 1);                                    % 到达各个点时间树                                          
+L = cell(UAV.num, 1);                     % 航迹片段树（累加结构）
+Time = cell(UAV.num, 1);                  % 到达各个点时间树                                          
       
-L_mt = 0;                                                               % 所有无人机航迹之和
-totalTime = zeros(UAV.num, 1);                         % 所用时间
-totalL = zeros(UAV.num, 1);                                % 每个无人机飞行距离
+L_mt = 0;                                 % 所有无人机航迹之和
+totalTime = zeros(UAV.num, 1);            % 所用时间
+totalL = zeros(UAV.num, 1);               % 每个无人机飞行距离
 
 for i = 1 : UAV.num
       PointNum = UAV.PointNum(i);   
@@ -122,16 +122,16 @@ for i = 1 : UAV.num
 
             end
       end   
-      Threat(i) = {Judge};                % 检测结果（长度比点的数目多一）
-      Angle(i) = {Angle_i};               % 转角
-      MiniTraj(i) = {Traj_i};              % 航迹片段
+      Threat(i) = {Judge};          % 检测结果（长度比点的数目多一）
+      Angle(i) = {Angle_i};         % 转角
+      MiniTraj(i) = {Traj_i};       % 航迹片段
       ProbPoint(i) = {ProbPoint_i}; % 问题点
 
       L(i) = {L_i};                 % 路径长度（累加）
-      Time(i) = {Time_i};    % 时间（累加）
-      L_mt = L_mt + l;           % 总长度
-      totalTime(i) = t;            % 时间
-      totalL(i) = l;                   % 长度
+      Time(i) = {Time_i};           % 时间（累加）
+      L_mt = L_mt + l;              % 总长度
+      totalTime(i) = t;             % 时间
+      totalL(i) = l;                % 长度
 end
 
 % 多无人机碰撞检测
@@ -141,7 +141,7 @@ for i = 2 : UAV.num
     PointNum_i = UAV.PointNum(i);
     for k = 1 : PointNum_i
         P1 = Track.P{i}(:, k)';  % K时刻 i 无人机位置
-        t_i = Time{i, 1}(k);                  % K时刻 i 无人机时间
+        t_i = Time{i, 1}(k);     % K时刻 i 无人机时间
         for j = 1 : i-1
             PointNum_j = UAV.PointNum(j);
             flag = false; % 
@@ -178,14 +178,14 @@ for i = 2 : UAV.num
 end
 
 % 生成检测报告
-report.L_mt = L_mt;                       %总行程之和
-report.Threat = Threat;                 %受威胁的航迹点位置
-report.AngleProb = Angle;            % 转角不满足的点
-report.TrajProb = MiniTraj;           % 不满足最小航迹间隔的点
+report.L_mt = L_mt;               % 总行程之和
+report.Threat = Threat;           % 受威胁的航迹点位置
+report.AngleProb = Angle;         % 转角不满足的点
+report.TrajProb = MiniTraj;       % 不满足最小航迹间隔的点
 report.ProbPoint = ProbPoint;     % 有问题的点
-report.L = totalL;                            %飞行距离
-report.time = totalTime;                %飞行时间
-report.col_times = CollideTimes;  %碰撞次数
+report.L = totalL;                % 飞行距离
+report.time = totalTime;          % 飞行时间
+report.col_times = CollideTimes;  % 碰撞次数
 end
 
 
@@ -255,7 +255,7 @@ function [across, across_num] = CheckThreat(P1, P2, M)
     if total > 0
         across = true;
     else
-        across = false;          % 是否穿越禁区
+        across = false;     % 是否穿越禁区
     end
     across_num = total;     % 穿过禁区的个数
 end

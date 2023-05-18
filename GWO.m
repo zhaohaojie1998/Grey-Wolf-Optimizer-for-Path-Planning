@@ -7,20 +7,20 @@ g = 50;       % 动态加权系数
 
 % 算法初始化
 [WolfPops, Tracks] = PopsInit(UAV, SearchAgents, false);   % 随机生成 初始狼群 和 轨迹们
-dim = WolfPops.PosDim;                                                         % 状态变量维度
+dim = WolfPops.PosDim;                                     % 状态变量维度
 
 % 初始化解
-Alpha_pos = zeros(1, dim);   % α解
-Alpha_score = inf;                  % α解适应度
-Alpha_no = 1;                         % α解编号
+Alpha_pos = zeros(1, dim);     % α解
+Alpha_score = inf;             % α解适应度
+Alpha_no = 1;                  % α解编号
 
 Beta_pos = zeros(1, dim);      % β解
-Beta_score = inf;                     % β解适应度
-Beta_no = 1;                             % β解编号
+Beta_score = inf;              % β解适应度
+Beta_no = 1;                   % β解编号
 
 Delta_pos = zeros(1, dim);     % δ解
-Delta_score = inf;                    % δ解适应度
-Delta_no = 1;                           % δ解编号
+Delta_score = inf;             % δ解适应度
+Delta_no = 1;                  % δ解编号
 
 Fitness_list = zeros(1, Max_iter);
 
@@ -34,7 +34,7 @@ for iter = 1 : Max_iter
     for i = 1 : SearchAgents
         % 计算目标函数
         [fitness, ~, Data] = ObjFun(Tracks{i}, UAV);    % 一个智能体的目标函数
-        ProbPoints{i} = Data.ProbPoint;                       % 所有智能体不符合条件的状态
+        ProbPoints{i} = Data.ProbPoint;                 % 所有智能体不符合条件的状态
 
         % 更新 Alpha、Beta 和 Delta 解
         if fitness <= Alpha_score  % 适应能力最强（因为性能指标越小越好，因此为小于号）
@@ -55,7 +55,7 @@ for iter = 1 : Max_iter
     end
 
     % ②  更新参数a
-    a = 2 - iter * 2 / Max_iter;                  % 线性递减
+    a = 2 - iter * 2 / Max_iter;              % 线性递减
     %a = 2 * cos((iter / Max_iter) * pi/2);   % 非线性递减
 
     % ③  更新位置（朝着前三只狼位置前进）
@@ -149,13 +149,13 @@ toc
 
 % 输出值
 solution.method = 'GWO';                % 算法
-solution.WolfPops = WolfPops;       % 所有解种群信息
-solution.Tracks = Tracks;                  % 所有解航迹信息
+solution.WolfPops = WolfPops;           % 所有解种群信息
+solution.Tracks = Tracks;               % 所有解航迹信息
 solution.Fitness_list = Fitness_list;   % α解适应度曲线
-solution.Alpha_Data = Data;            % α解的威胁信息
-solution.Alpha_no = Alpha_no;        % α解的位置
+solution.Alpha_Data = Data;             % α解的威胁信息
+solution.Alpha_no = Alpha_no;           % α解的位置
 solution.Beta_no = Beta_no;             % β解的位置
-solution.Delta_no = Delta_no;          % δ解的位置
+solution.Delta_no = Delta_no;           % δ解的位置
 
 end
 

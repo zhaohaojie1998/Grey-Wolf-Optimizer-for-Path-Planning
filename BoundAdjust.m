@@ -5,9 +5,9 @@ Tracks = Pops2Tracks(WolfPops, UAV);
 % ①  不满足约束："删除"航迹点，即取前后平均值
 dim = UAV.PointDim;                                    % 维度
 for agent = 1 : size(WolfPops.Pos, 1)
-    Track = Tracks{agent};                               % 轨迹 (struct结构)
-    ProbPoint = ProbPoints{agent};               % 问题点
-    Position = [];                                               % 新狼群编码
+    Track = Tracks{agent};                             % 轨迹 (struct结构)
+    ProbPoint = ProbPoints{agent};                     % 问题点
+    Position = [];                                     % 新狼群编码
     for i =1:UAV.num
           PointNum = UAV.PointNum(i);
           % 删除一条航迹上的问题点

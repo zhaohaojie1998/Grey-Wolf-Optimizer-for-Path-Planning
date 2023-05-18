@@ -7,10 +7,10 @@ g = 50;       % 动态更新加权系数
 
 % 算法初始化
 [WolfPops, ~] = PopsInit(UAV, SearchAgents, false);   % 随机生成 初始狼群
-ClassPops = PopsCluster(WolfPops, UAV);                    % 进行初始聚类（用来获得 k 值）
-dim = WolfPops.PosDim;                                                 % 状态变量维度
-cSearchAgents = ClassPops.SearchAgents;                    % 搜索智能体个数（子种群数量）
-SearchAgents = cSearchAgents * ClassPops.k;              % 对所有智能体个数进行修正（k的整数倍）
+ClassPops = PopsCluster(WolfPops, UAV);               % 进行初始聚类（用来获得 k 值）
+dim = WolfPops.PosDim;                                % 状态变量维度
+cSearchAgents = ClassPops.SearchAgents;               % 搜索智能体个数（子种群数量）
+SearchAgents = cSearchAgents * ClassPops.k;           % 对所有智能体个数进行修正（k的整数倍）
 WolfPops.Pos = WolfPops.Pos(1:SearchAgents, :);       % 对种群进行修正
 
 % 报错
@@ -40,7 +40,7 @@ fprintf('>>MP-GWO 优化中    00.00%%')
 for iter = 1 : Max_iter
 
     % ①  更新参数a
-    a = 2 - iter * 2 / Max_iter;               % 线性递减
+    a = 2 - iter * 2 / Max_iter;          % 线性递减
     %a = 2 * cos((iter/Max_iter)*pi/2);   % 非线性递减
     
     % ②  聚类
@@ -144,15 +144,15 @@ real_Delta_no = index(3);
 Alpha_Data = ClassPops.Data{t(1, 1)}{t(1, 2)}  ;
 
 % 输出值
-solution.method = 'MP-GWO';                                 % 算法
-% solution.ClassPops = ClassPops;                               % 分类信息
-solution.WolfPops = WolfPops;                                % 所有解种群信息
-solution.Tracks = Pops2Tracks(WolfPops, UAV);    % 所有解航迹信息
-solution.Fitness_list = mean(Fitness_list, 1);            % 所有α解的平均适应度曲线
+solution.method = 'MP-GWO';                                % 算法
+% solution.ClassPops = ClassPops;                          % 分类信息
+solution.WolfPops = WolfPops;                              % 所有解种群信息
+solution.Tracks = Pops2Tracks(WolfPops, UAV);              % 所有解航迹信息
+solution.Fitness_list = mean(Fitness_list, 1);             % 所有α解的平均适应度曲线
 solution.Alpha_Data = Alpha_Data;                          % 真 · α 的威胁信息
-solution.Alpha_no = real_Alpha_no;                          % 真 · α 的位置
-solution.Beta_no = real_Beta_no;                               % 真 · β 的位置
-solution.Delta_no = real_Delta_no;                            % 真 · δ 的位置
+solution.Alpha_no = real_Alpha_no;                         % 真 · α 的位置
+solution.Beta_no = real_Beta_no;                           % 真 · β 的位置
+solution.Delta_no = real_Delta_no;                         % 真 · δ 的位置
 
 end
 
@@ -177,7 +177,7 @@ end
 function [ClassPops] = PopsCluster(WolfPops, UAV)
 
 SearchAgents = size(WolfPops.Pos, 1);  % 智能体个数 
-Dim = WolfPops.PosDim;                        % 智能体维度
+Dim = WolfPops.PosDim;                % 智能体维度
 Tracks = Pops2Tracks(WolfPops, UAV); % 智能体转换成航迹信息
 
 % 计算适应度
@@ -196,17 +196,17 @@ for i = 1:SearchAgents
 end
 
 % 分类
-k = size(subF, 1);                                              % 分 k 类（由objfun决定）
+k = size(subF, 1);                          % 分 k 类（由objfun决定）
 cSearchAgents = floor(SearchAgents / k);    % 并行智能体个数
-cFitness = zeros(k, cSearchAgents);               % 保存每类的适应度
-cPositions = cell(k, 1);                                     % 保存每类的位置信息
-cTracks = cell(k, 1);                                          % 保存每类的航迹信息
-cProbPoints = cell(k, 1);                                  % 保存每类的有问题航迹点
-cData = cell(k, 1);                                             % 存储每类的检测报告
+cFitness = zeros(k, cSearchAgents);         % 保存每类的适应度
+cPositions = cell(k, 1);                    % 保存每类的位置信息
+cTracks = cell(k, 1);                       % 保存每类的航迹信息
+cProbPoints = cell(k, 1);                   % 保存每类的有问题航迹点
+cData = cell(k, 1);                         % 存储每类的检测报告
 
 % 排序
 [~, Index] = sort(o_subF, 2, "ascend") ;     % 沿维度2升序排序，返回新矩阵和序号
-                                                                       % fitness越小越好
+                                             % fitness越小越好
 % 聚类
 for i = 1:k
     Positions = zeros(cSearchAgents, Dim);
