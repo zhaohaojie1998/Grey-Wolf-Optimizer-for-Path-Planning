@@ -1,14 +1,15 @@
 # 灰狼优化算法(GWO)路径规划
-<<<<<<< HEAD
+
+# Grey Wolf Optimizer
+
 
 ### 仿真结果：
 
-![](Result.png)
+![img](Result.png)
 
-=======
-# Grey Wolf Optimizer
->>>>>>> ff6d042c58ca6f2fbcb880124e5513ad7d5848a9
+
 ### 参考文献：
+
 [1]周瑞,黄长强,魏政磊,赵克新.MP-GWO 算法在多 UCAV 协同航迹规划
 中的应用[J].空军工程大学学报(自然科学版),2017,18(05):24-29.
 
@@ -18,3 +19,6 @@
 [3]柳长安,王晓鹏,刘春阳,吴华.基于改进灰狼优化算法的无人机三维航迹
 规 划 [J]. 华 中 科 技 大 学 学 报 ( 自 然 科 学 版 ),2017,45(10):38-
 42.DOI:10.13245/j.hust.171007.
+
+
+###### 广告: [DRL-for-Path-Planning: 深度强化学习路径规划, SAC路径规划](https://github.com/zhaohaojie1998/DRL-for-Path-Planning)
