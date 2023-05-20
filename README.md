@@ -20,5 +20,8 @@
 规 划 [J]. 华 中 科 技 大 学 学 报 ( 自 然 科 学 版 ),2017,45(10):38-
 42.DOI:10.13245/j.hust.171007.
 
+###### 广告:
 
-###### 广告: [DRL-for-Path-Planning: 深度强化学习路径规划, SAC路径规划](https://github.com/zhaohaojie1998/DRL-for-Path-Planning)
+######  [DRL-for-Path-Planning: 深度强化学习路径规划, SAC路径规划](https://github.com/zhaohaojie1998/DRL-for-Path-Planning)
+
+###### [A-Star-for-Path-Planning: A*算法路径规划](https://github.com/zhaohaojie1998/A-Star-for-Path-Planning)
