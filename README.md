@@ -2,11 +2,9 @@
 
 # Grey Wolf Optimizer
 
-
 ### 仿真结果：
 
 ![img](Result.png)
-
 
 ### 参考文献：
 
@@ -22,6 +20,6 @@
 
 ###### 广告:
 
-######  [DRL-for-Path-Planning: 深度强化学习路径规划, SAC路径规划](https://github.com/zhaohaojie1998/DRL-for-Path-Planning)
+###### [DRL-for-Path-Planning: 深度强化学习路径规划, SAC路径规划](https://github.com/zhaohaojie1998/DRL-for-Path-Planning)
 
-###### [A-Star-for-Path-Planning: A*算法路径规划](https://github.com/zhaohaojie1998/A-Star-for-Path-Planning)
+###### [Path-Planning: 多种常用的路径规划](https://github.com/zhaohaojie1998/A-Star-for-Path-Planning)
