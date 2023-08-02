@@ -5,13 +5,9 @@
 ### 用法：
 
 - matlab运行main.m
-
 - 自带三种UAV_SetUp.m仿真参数设置（也可自行设计仿真环境）
-
 - 同时支持2D无人机轨迹规划和3D无人机轨迹规划（取决于UAV_SetUp.m的参数设置）
-
 - 自带3种启发搜索算法（在main.m中选择）
-
 - 可在ObjFunc.m中调整目标函数权重等
 - 程序运行较慢，但有进度条显示，耐心等待
 
@@ -21,7 +17,7 @@
 
 ### 仿真结果：
 
-![img](Result.png)
+![img](Result0.png)
 
 ### 参考文献：
 
@@ -41,6 +37,8 @@ matlab >= R2021b（没试过低版的matlab）
 
 ###### 广告:
 
-###### [DRL-for-Path-Planning: 深度强化学习路径规划, SAC路径规划](https://github.com/zhaohaojie1998/DRL-for-Path-Planning)
+###### [DRL-for-Path-Planning: 深度强化学习路径规划， SAC路径规划](https://github.com/zhaohaojie1998/DRL-for-Path-Planning)
 
-###### [Path-Planning: 多种常用的路径规划](https://github.com/zhaohaojie1998/A-Star-for-Path-Planning)
+###### [Path-Planning: 路径规划算法，A*、Dijstra、Hybrid A*等经典路径规划](https://github.com/zhaohaojie1998/A-Star-for-Path-Planning)
+
+![](Result1.png)
