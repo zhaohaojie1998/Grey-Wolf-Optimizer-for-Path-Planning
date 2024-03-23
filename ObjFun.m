@@ -102,6 +102,4 @@ Data.L = report.L;                    % 每个无人机的航程
 Data.t = report.time;                 % 每个无人机的时间
 Data.c = report.col_times;            % 所有无人机总碰撞次数
 
-
 end
-
