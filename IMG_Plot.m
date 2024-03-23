@@ -106,7 +106,7 @@ else
     %axis equal
     xlim([-25,900])    % 修改这里
     ylim([-25,900])    % 修改这里
-    zlim([0,25])          % 修改这里
+    zlim([0,25])       % 修改这里
     xlabel('x(km)')
     ylabel('y(km)')
     zlabel('z(km)')
