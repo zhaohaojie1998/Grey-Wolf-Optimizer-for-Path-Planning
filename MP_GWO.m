@@ -236,4 +236,3 @@ ClassPops.Fitness = cFitness;
 ClassPops.SearchAgents = cSearchAgents;
 ClassPops.k = k;
 end
-
