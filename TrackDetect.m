@@ -39,7 +39,7 @@ for i = 1 : UAV.num
                 phi0 = atan2(ZZ(2), ZZ(1));   % 偏角检测
                 phi1 = phi0;
                 d_phi = phi1 - phi0;
-                if dim > 2                                % 倾角检测
+                if dim > 2                    % 倾角检测
                     theta0 = atan(ZZ(3) / sqrt(ZZ(1)^2 + ZZ(2)^2));
                     theta1 = theta0;
                     d_theta = theta1 - theta0;
@@ -194,7 +194,7 @@ end
 function [across, across_num] = CheckThreat(P1, P2, M)
     % 威胁区（球或圆区域，不适合圆柱区域）
     O = M(:,1:end-1);  % 圆心
-    R = M(:, end);        % 半径 
+    R = M(:, end);     % 半径 
     
     % 检测线段是否穿过某个障碍区
     total = 0;
