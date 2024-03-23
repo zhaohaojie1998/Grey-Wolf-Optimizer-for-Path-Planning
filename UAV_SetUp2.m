@@ -15,10 +15,10 @@ UAV.G = [  875,       875;
 
 UAV.PointNum = [  26;
                   24;
-                  24;  ];                 % 每个无人机导航点个数（起始点之间点的个数）
+                  24;  ];              % 每个无人机导航点个数（起始点之间点的个数）
 
-UAV.PointDim = size(UAV.S, 2);            % 坐标点维度 （由 起点 坐标决定）
-UAV.num = size(UAV.S, 1);                 % UAV数量 （由 起点 个数决定）
+UAV.PointDim = size(UAV.S, 2);         % 坐标点维度 （由 起点 坐标决定）
+UAV.num = size(UAV.S, 1);              % UAV数量 （由 起点 个数决定）
 
 
 % 威胁点设置 (x,y,r) 或 (x,y,z,r)
