@@ -158,4 +158,3 @@ solution.Beta_no = Beta_no;             % β解的位置
 solution.Delta_no = Delta_no;           % δ解的位置
 
 end
-
