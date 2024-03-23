@@ -2,7 +2,7 @@
 clc, close all
 
 
-%--- 算法选择 1：GWO算法  2：MP-GWO算法  3：CS-GWO算法 
+%--- 算法选择 1：GWO算法  2：MP-GWO算法
 options = 2;
 
 
@@ -18,10 +18,8 @@ UAV = UAV_SetUp1;            % 在 UAV_SetUp.m 文件进行设置
 %--- 灰狼算法
 if options < 2
     solution = GWO(UAV, SearchAgents, Max_iter);  % GWO算法
-elseif options < 3
-    solution = MP_GWO(UAV, SearchAgents, Max_iter);  % MP-GWO算法
 else
-    solution = CS_GWO(UAV, SearchAgents, Max_iter);  % CS-GWO算法
+    solution = MP_GWO(UAV, SearchAgents, Max_iter);  % MP-GWO算法
 end
 
 
