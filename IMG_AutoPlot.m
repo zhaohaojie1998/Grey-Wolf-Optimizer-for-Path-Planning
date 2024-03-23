@@ -137,10 +137,9 @@ function drawsphere(a,b,c,R,useSurf)
     if (nargin<5)
         useSurf = false;
     end
-
     % 生成数据
     [x,y,z] = sphere(20);
-
+    
     % 调整半径
     x = R*x; 
     y = R*y;
