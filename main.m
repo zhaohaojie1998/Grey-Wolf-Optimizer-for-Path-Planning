@@ -12,7 +12,7 @@ Max_iter = 145 ;             % 最大搜索步数
 
 
 %--- 协同无人机设置
-UAV = UAV_SetUp1;            % 在 UAV_SetUp.m 文件进行设置
+UAV = UAV_SetUp;             % 在 UAV_SetUp.m 文件进行设置
 
 
 %--- 灰狼算法
@@ -24,7 +24,7 @@ end
 
 
 %--- 绘图
-IMG_AutoPlot1(solution, UAV) % 自适应绘图（全自动绘图，但不如手动的好看）
+IMG_AutoPlot(solution, UAV) % 自适应绘图（全自动绘图，但不如手动的好看）
 % IMG_Plot(solution, UAV) % 手动绘图（需手动添加无人机，默认3个）
 
 
