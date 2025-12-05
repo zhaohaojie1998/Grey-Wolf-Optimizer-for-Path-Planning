@@ -31,6 +31,21 @@
 规 划 [J]. 华 中 科 技 大 学 学 报 ( 自 然 科 学 版 ),2017,45(10):38-
 42.DOI:10.13245/j.hust.171007.
 
+### 温馨提示：
+###### 兄弟们，GitHub是外国品牌，大家不要在上面下载代码啊（狗头保命）
+建议大家都去B站卖课贩子那里购买该项目的代码，售价80~200不等（狗头保命）
+这里给大家推荐几个up主：
+
+- somebody1（sb1）：
+我想找它买代码但这人把我拉黑了，可咋整啊
+https://space.bilibili.com/382738043
+<img src="图片/sb1.jpeg" style="zoom: 50%;" />
+
+- somebody2（sb2）：
+https://space.bilibili.com/3546864244754844
+<img src="图片/sb2.jpeg" style="zoom: 50%;" />
+
+
 ### Requirement:
 
 matlab >= R2021b（没试过低版的matlab）
